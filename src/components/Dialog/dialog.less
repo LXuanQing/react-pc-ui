@@ -1,0 +1,184 @@
+@__dialog-prefix-cls: kuma-dlg;
+
+.@{__dialog-prefix-cls} {
+    &-mask {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.4);
+        z-index: 1000;
+        &-hidden {
+            display: none;
+        }
+    }
+}
+.@{__dialog-prefix-cls}-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.@{__dialog-prefix-cls} {
+    &-content {
+        position: relative;
+        background-color: #fff;
+        box-shadow: 0 4px 15px 0 rgba(0,0,0,.15);
+        border-radius: 6px;
+        overflow: hidden;
+        outline: 0;
+    }
+    &-close {
+        position: absolute;
+        right: 13px;
+        top: 8px;
+        background: none;
+        border: 0 none;
+        cursor: pointer;
+        outline: none;
+        color: rgba(0,0,0,.6);
+        font-size: 16px;
+        &-x {
+            &:after {
+                font-family: 'iconfont';
+                content: "\e703";
+            }
+        }
+    }
+    &-title {
+        padding: 20px 0px 10px;
+        font-size: 16px;
+        color: rgba(0,0,0,.6);
+        text-indent: 24px;
+    }
+    &-body {
+        padding: 16px 24px 40px;
+        font-size: 12px;
+        line-height: 1.5;
+    }
+    &-footer {
+        padding: 16px 16px 16px 24px;
+        text-align: right;
+        border-top: 1px solid rgba(31,56,88,.1);
+        .foot-btn-cancel {
+            display: inline-block;
+            height: 28px;
+            background-color: #fff;
+            border: 1px solid rgba(31,56,88,.3);
+            border-radius: 3px;
+            padding: 0 8px;
+            font-size: 12px;
+            line-height: 26px;
+            color: rgba(31,56,88,.6);
+            cursor: pointer;
+        }
+        .foot-btn-confirm {
+            display: inline-block;
+            margin-left: 8px;
+            height: 28px;
+            background-color: #f37327;
+            border: 1px solid  #f37327;
+            color: #fff;
+            border-radius: 3px;
+            padding: 0 8px;
+            font-size: 12px;
+            line-height: 26px;
+            cursor: pointer;            
+        }
+    }
+}
+
+@keyframes dialogSlideInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+@keyframes dialogSlideOutDown {
+    0% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+}
+.dialogSlideDown-enter,
+.dialogSlideDown-appear {
+    opacity: 0;
+    transform: translateY(50px);
+    animation-timing-function: ease;
+    animation-duration: .4s;
+}
+
+.dialogSlideDown-enter-active,
+.dialogSlideDown-appear-active {
+    animation-name: dialogSlideInDown;
+}
+
+.dialogSlideDown-leave {
+    opacity: 1;
+    animation-timing-function: ease;
+    animation-duration: .4s;
+}
+
+.dialogSlideDown-leave-active {
+    animation-name: dialogSlideOutDown;
+}
+
+
+@keyframes dialogFadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes dialogFadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.dialogFade-enter,
+.dialogFade-appear {
+    opacity: 0;
+    animation-timing-function: ease;
+    animation-duration: .4s;
+}
+
+.dialogFade-enter-active,
+.dialogFade-appear-active {
+   animation-name: dialogFadeIn;
+}
+
+.dialogFade-leave {
+    opacity: 1;
+    animation-timing-function: ease;
+    animation-duration: .4s;
+}
+
+.dialogFade-leave-active {
+   animation-name: dialogFadeOut;
+}
+// 使用阿里字体，用伪类实现
+// 1 <link href="http://at.alicdn.com/t/font_514108_prvxm9iupk384cxr.css" rel="stylesheet"/>
+// 2 after { font-family: 'iconfont'; content: "\e703";}

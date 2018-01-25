@@ -1,0 +1,28 @@
+{
+  "name": "react-pc-ui",
+  "author": "lxq",
+  "version": "1.0.0",
+  "description": "An awesome project",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:LXuanQing/react-pc-ui.git"
+  },
+  "scripts": {
+    "start": "nowa server",
+    "build": "nowa build"
+  },
+  "homepage": "",
+  "license": "MIT",
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "lodash": "^4.17.4",
+    "object-assign": "^4.1.1",
+    "rc-animate": "^2.4.4",
+    "rc-dialog": "^7.1.0",
+    "rc-util": "^4.3.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-router-dom": "^4.2.2",
+    "uxcore-icon": "^0.1.17"
+  }
+}

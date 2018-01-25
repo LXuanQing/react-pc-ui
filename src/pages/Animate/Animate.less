@@ -1,0 +1,52 @@
+.animate-area {
+    height: 200px;
+    width: 100px;
+    background: darkblue;
+}
+
+.fade-enter,
+.fade-appear {
+    transform: translate(0, 100%);
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+    opacity: 0;
+}
+.fade-enter-active,
+.fade-appear-active {
+    animation-name: popupSlideUpIn;
+}
+
+@keyframes popupSlideUpIn {
+    0% {
+        transform :translate(0, 100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+
+.fade-leave {
+    transform: translate(0, 0);
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+    opacity: 1;
+}
+.fade-leave-active {
+    animation-name: popupSlideUpOut;
+}
+@keyframes popupSlideUpOut {
+    0% {
+        transform :translate(0, 0);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0, 100%);
+        opacity: 1;
+    }
+}
+
