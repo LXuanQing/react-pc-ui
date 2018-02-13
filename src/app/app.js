@@ -7,12 +7,13 @@ import './app.less';
 import Animate from 'pages/Animate'
 import Totop from 'pages/Totop'
 import Dialog from 'pages/Dialog'
+import Album from 'pages/Album';
 
 render(
   	<Router>
   		<div className="demo-root">
 			<Switch>
-				<Route exact path="/" component={Dialog} />
+				<Route exact path="/" component={Album} />
 			</Switch>
   		</div>
 	</Router>,
